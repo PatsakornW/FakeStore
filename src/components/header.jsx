@@ -10,7 +10,7 @@ function Header() {
   const { cartAmount } = useContext(CartContext);
 
   return (
-    <div className="bg-white fixed w-full z-10 py-4 px-10">
+    <div className="bg-white fixed w-full z-20 py-4 px-10 shadow-2xl">
       <div className="container flex justify-between items-center mx-auto h-full">
         <Link to={"/"} className="flex items-center">
           <img src={store} alt="logo" className="w-[30px]" />
@@ -21,10 +21,10 @@ function Header() {
           className=" cursor-pointer flex relative"
         >
           {" "}
-          <FaCartShopping className="text-2xl" />
-          <div className=" bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
+          <FaCartShopping className="text-2xl hover:text-primary" />
+          {/* <div className=" bg-accent absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
             {cartAmount}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -1,4 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
+
 
 export const CartContext = createContext();
 
@@ -59,6 +61,8 @@ function CartContextProvider({ children }) {
   }
 
   function addCart(products, id) {
+    toast.success('Successfully added!')
+
     const newItem = { ...products, amount: 1 };
 
     const cartItem = cart.find((item) => {

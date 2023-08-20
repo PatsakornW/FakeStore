@@ -1,6 +1,10 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/cartContext";
+import toast, { Toaster } from 'react-hot-toast';
+import { FaCartShopping } from "react-icons/fa6";
+
+
 
 function Card_products({ products }) {
   const { addCart } = useContext(CartContext);
@@ -10,13 +14,13 @@ function Card_products({ products }) {
     <div   className="flex flex-col rounded-xl bg-white p-3 shadow-lg hover:shadow-xl hover:transform hover:scale-105 duration-300 ">
       <Link to={`/product/${products.id}`}>
       <img
-        className=" w-full rounded-md h-72 xl:h-72"
+        className="p-10  rounded-md h-64 xl:h-64 w-full"
         src={products.image}
         alt={products.title}
       />
 
       <div className="mt-1 p-2">
-        <h2 className="text-slate-700">{products.title}</h2>
+        <h2 className="text-black">{products.title}</h2>
         <p className="mt-1 text-sm text-slate-400 capitalize">
           {products.category}
         </p>
@@ -25,9 +29,9 @@ function Card_products({ products }) {
       
 
       <div className="mt-auto flex items-end justify-between">
-        <p className="text-lg font-bold text-blue-500">{products.price} $</p>
+        <p className="text-lg font-bold text-gray-700">{products.price} $</p>
 
-        <div className="flex items-center space-x-1.5 rounded-lg bg-blue-500 px-4 py-1.5 text-white duration-100 hover:bg-blue-600">
+        <div className="flex items-center space-x-1.5 rounded-lg bg-primary px-4 py-1.5 text-white duration-100 hover:bg-secondary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -44,9 +48,13 @@ function Card_products({ products }) {
           </svg>
 
           <button className="text-sm" onClick={()=> addCart(products,products.id)}>Add to cart</button>
+          
         </div>
       </div>
+      
     </div>
+
+    
   );
 }
 

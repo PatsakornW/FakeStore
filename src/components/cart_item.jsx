@@ -14,7 +14,7 @@ function Cart_item({ item }) {
         </Link>
         <div className="flex flex-col w-full ">
           <div className="flex justify-between mb-2  items-start">
-            <Link to={`/products/${item.id}`} className=" font-medium  max-w-[240px]">
+            <Link to={`/product/${item.id}`} className=" font-medium  max-w-[240px]">
               {item.title}
             </Link>
             
@@ -25,9 +25,9 @@ function Cart_item({ item }) {
 
           <div className="flex  items-center gap-x-2 h-[36px] text-sm">
                 <div className="flex items-center border-gray-500">
-                    <span className="cursor-pointer rounded-l bg-gray-100 py-2 px-3 duration-100 hover:bg-blue-500 hover:text-white text-xs" onClick={()=> minusAmount(item.id)}> <FaMinus/> </span>
-                    <span className=" cursor-default  bg-gray-200 py-1 px-4 "> {item.amount} </span>
-                    <span className="cursor-pointer rounded-r bg-gray-100 py-2 px-3 duration-100 hover:bg-blue-500 hover:text-white text-xs" onClick={()=> plusAmount(item.id)}> <FaPlus/> </span>
+                    <span className="cursor-pointer rounded-l bg-primary py-2 px-3 duration-100 hover:bg-secondary hover:text-white text-xs" onClick={()=> minusAmount(item.id)}> <FaMinus/> </span>
+                    <span className=" cursor-default  bg-gay-200 py-1 px-4 "> {item.amount} </span>
+                    <span className="cursor-pointer rounded-r bg-primary py-2 px-3 duration-100 hover:bg-secondary hover:text-white text-xs" onClick={()=> plusAmount(item.id)}> <FaPlus/> </span>
               </div>
                 <div className="flex w-full">$ {item.price}</div>
                 <div className="w-full flex justify-end font-medium">$ {item.price * item.amount} </div>

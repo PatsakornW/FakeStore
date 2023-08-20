@@ -13,16 +13,16 @@ function Sidebar() {
     <div
       className={`${
         isOpen ? "right-0" : "-right-full"
-      } w-full bg-white fixed top-0 h-full shadow-2xl md:w-[50vw] xl:w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px]`}
+      } w-full bg-white fixed top-0 h-full shadow-2xl md:w-[50vw] xl:w-[30vw] transition-all duration-300 z-20 px-4 lg:px-[35px] `}
     >
       <div className="flex mt-10 items-center gap-2">
         <BsArrowLeftShort
           className="text-2xl cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
         />
-        <p className="font-bold"> Shopping Cart {cartAmount} </p>
+        <p className="font-bold text-xl"> Your Cart  </p>
       </div>
-      <div className="border-b h-[1px] border-gray-200 py-2 w-full"></div>
+      <div className="border-b h-[1px] border-primary py-2 w-full"></div>
       <div className="h-3/4 overflow-y-auto">
         {cart.map((item) => {
           return <Cart_item item={item} key={item.id}/>;
@@ -30,10 +30,10 @@ function Sidebar() {
       </div>
       <div >
         <div>
-            <div>
+            <div className="text-xl font-bold mb-2">
                 <span>Total :</span> $ {total}
             </div>
-            <button className="btn btn-error btn-sm" onClick={()=> setCart([])}>
+            <button className="btn bg-red-500 hover:bg-red-700 text-white btn-sm" onClick={()=> setCart([])}>
                 Clear Cart
             </button>
 
